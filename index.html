@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eşik: İnsan / YZ — Kararsız Ortaklıklar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&family=Inter:wght@300;400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bordo: #785B53; --kömür: #3A3A3A; --gri-mavi: #7A8B9C; --krem: #F0EBE3; --krem-koyu: #E5DDD4; }
+
+    html, body { width: 100%; min-height: 100vh; background-color: var(--krem); font-family: 'Inter', sans-serif; }
+
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(122,139,156,0.07) 60px, rgba(122,139,156,0.07) 61px),
+        repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(122,139,156,0.07) 60px, rgba(122,139,156,0.07) 61px);
+      pointer-events: none; z-index: 0;
+    }
+
+    header { position: relative; z-index: 10; padding: 2.5rem 3rem 2rem; border-bottom: 1px solid rgba(120,91,83,0.2); }
+
+    .baslik-tr { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; color: var(--bordo); line-height: 1.05; }
+    .baslik-en { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 300; color: var(--gri-mavi); font-style: italic; margin-top: 0.4rem; }
+    .meta { margin-top: 1rem; font-size: 0.72rem; color: var(--bordo); opacity: 0.55; letter-spacing: 0.06em; text-transform: uppercase; font-family: 'IBM Plex Mono', monospace; }
+
+    .sahne { position: relative; z-index: 10; width: 100%; height: 68vh; min-height: 420px; }
+
+    .yatay-cizgi {
+      position: absolute; top: 50%; left: 5%; width: 90%; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(120,91,83,0.12), transparent);
+    }
+
+    .etiket {
+      position: absolute; display: inline-block; padding: 0.5rem 1.1rem 0.5rem 0.9rem;
+      font-size: 0.8rem; color: var(--bordo); border: 1px solid rgba(120,91,83,0.38);
+      background: rgba(240,235,227,0.85); cursor: pointer; text-decoration: none;
+      letter-spacing: 0.02em; font-family: 'Inter', sans-serif;
+      transition: background 0.2s, color 0.15s, border-color 0.2s;
+    }
+    .etiket:hover {
+      background: var(--bordo); color: var(--krem); border-color: var(--bordo);
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; font-weight: 300; letter-spacing: 0.04em;
+    }
+
+    .t1 { top: 9%; left: 7%; clip-path: polygon(4% 0%, 100% 0%, 96% 100%, 0% 100%); }
+    .t2 { top: 22%; left: 50%; clip-path: polygon(0% 0%, 100% 4%, 97% 100%, 3% 96%); }
+    .t3 { top: 14%; left: 27%; clip-path: polygon(2% 0%, 98% 0%, 100% 100%, 0% 92%); }
+    .t4 { top: 46%; left: 10%; clip-path: polygon(0% 4%, 100% 0%, 98% 100%, 2% 98%); }
+    .t5 { top: 40%; left: 63%; clip-path: polygon(3% 0%, 97% 2%, 100% 100%, 0% 98%); }
+    .t6 { top: 60%; left: 36%; clip-path: polygon(0% 0%, 100% 3%, 96% 100%, 4% 100%); }
+    .t7 { top: 56%; left: 70%; clip-path: polygon(2% 0%, 100% 0%, 98% 96%, 0% 100%); }
+
+    footer {
+      position: relative; z-index: 10; padding: 2rem 3rem;
+      border-top: 1px solid rgba(120,91,83,0.15);
+      display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-sol { font-size: 0.72rem; color: var(--bordo); opacity: 0.5; line-height: 1.9; font-family: 'IBM Plex Mono', monospace; }
+    .footer-sag { font-size: 0.72rem; color: var(--bordo); opacity: 0.65; text-align: right; line-height: 1.9; font-family: 'IBM Plex Mono', monospace; }
+
+    @media (max-width: 600px) {
+      header { padding: 2rem 1.5rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+      .sahne { height: 75vh; }
+      .t1 { top: 7%; left: 4%; } .t2 { top: 20%; left: 42%; } .t3 { top: 13%; left: 20%; }
+      .t4 { top: 38%; left: 4%; } .t5 { top: 35%; left: 52%; } .t6 { top: 55%; left: 28%; } .t7 { top: 50%; left: 62%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="baslik-tr">Eşik: İnsan / YZ<br>Kararsız Ortaklıklar</div>
+    <div class="baslik-en">Threshold: Human / AI — Unstable Partnerships</div>
+    <div class="meta">5 Ekim 2026 &nbsp;·&nbsp; October 5, 2026 &nbsp;·&nbsp; Çevrimiçi · Online</div>
+  </header>
+
+  <main class="sahne">
+    <div class="yatay-cizgi"></div>
+    <a href="alara-basar.html" class="etiket t1">Alara Başar</a>
+    <a href="gulten-dursun.html" class="etiket t2">Gülten Dursun</a>
+    <a href="umut-kilinc.html" class="etiket t3">Umut Kılınç</a>
+    <a href="leon-butler.html" class="etiket t4">Leon Butler</a>
+    <a href="beyza-toprak.html" class="etiket t5">Beyza Toprak</a>
+    <a href="izzet-kilicay.html" class="etiket t6">İzzet Eray Kılıçay</a>
+    <a href="aleksei-martyniuk.html" class="etiket t7">Aleksei Martyniuk</a>
+  </main>
+
+  <footer>
+    <div class="footer-sol">
+      Seçici Kurul · Selection Committee<br>
+      Prof. Burhan Yılmaz · Dr. Öğr. Üyesi İbrahim Arslan · Doç. Serdar Aydın<br>
+      unstablepartnerships.carrd.co
+    </div>
+    <div class="footer-sag">
+      Düzenleyen · Organized by<br>
+      Serdar Aydın<br>
+      Ordu Üniversitesi GSF
+    </div>
+  </footer>
+</body>
+</html>
